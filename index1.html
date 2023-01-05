@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+</head>
+<body>
+    <!-- Create a web app which would take two inputs. It would also have 4 buttons: +, -, x /. 
+    Based on the button clicked perform the operation on the two inputs.  -->
+    <label for="firstNum">First Number </label>
+    <input type="number" id="firstNum">
+   
+
+    <label for="secondNum">Second Number</label>
+    <input type="number" id="secondNum">
+    
+
+    <button id="btnPlus">+</button>
+    <button>-</button>
+    <button>x</button>
+    <button>/</button>
+<script>
+    const firstNum = document.querySelector("#firstNum");
+    const secondNum = document.querySelector("#secondNum");
+    const btnPlus = document.querySelector("#btnPlus");
+
+    console.log(firstNum);
+    console.log(secondNum);
+    console.log(btnPlus);
+
+    btnPlus.addEventListener("click", function calculator (e) {
+        console.log(e.target.value);
+    })
+
+   
+
+</script>
+</body>
+</html>
