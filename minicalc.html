@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini-Calculator</title>
+</head>
+<body>
+    <label for="input1">First-Value
+        <input type="number" id="input1">
+    </label>
+
+    <label for="input2">Second-Value
+        <input type="number" id="input2">
+    </label>
+
+    <button id="plus">+</button>
+    <button id="minus">-</button>
+    <button id="divide">/</button>
+    <button id="multiply">*</button>
+
+    <h1 id="output"></h1>
+
+    <script>
+        const input1 = document.querySelector("#input1");
+        const input2 = document.querySelector("#input2");
+        const plus = document.querySelector("#plus");
+        const minus = document.querySelector("#minus");
+        const divide = document.querySelector("#divide");
+        const multiply = document.querySelector("#multiply");
+        const output = document.querySelector("#output");
+
+        
+        plus.addEventListener("click", () => {
+            let input1Val = Number(input1.value); // v is smaller
+            let input2Val = Number(input2.value); // can't define outside block
+            console.log("Adding...")
+            console.log(input1Val)
+            // console.log(typeof input1Val);
+            sumPlus = input1Val + input2Val // adding values
+            output.innerHTML = sumPlus // putting answer in the h1. 
+        })
+
+        minus.addEventListener("click", () => {
+            console.log("substracting...")
+            let input1Val = Number(input1.value);
+            let input2Val = Number(input2.value);
+
+            sumMinus = input1Val - input2Val;
+            output.innerHTML = sumMinus;
+        })
+
+        divide.addEventListener("click", () => {
+            console.log("dividing 2 elemnets");
+
+            let input1Val = Number(input1.value);
+            let input2Val = Number(input2.value);
+
+            sumdivide = input1Val / input2Val;
+            output.innerHTML = sumdivide;
+        });
+
+        multiply.addEventListener("click", () => {
+            console.log("muliplication");
+
+            let input1Val = Number(input1.value);
+            let input2Val = Number(input2.value);
+
+            sumMultiply = input1Val * input2Val;
+            output.innerHTML = sumMultiply;
+        })
+
+
+
+
+
+    </script>
+</body>
+</html>
