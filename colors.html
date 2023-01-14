@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>colors</title>
+</head>
+<body>
+    <label for="inputText"> Change Text Color : <input type="text" id="inputText"></label>
+
+    <button id="red">Red</button>
+    <button id="green">Green</button>
+    <button id="blue">Blue</button>
+   
+    <script>
+        const inputText = document.querySelector("#inputText"); 
+        const red = document.querySelector("#red"); 
+        const green = document.querySelector("#green"); 
+        const blue = document.querySelector("#blue");
+        
+        console.log(inputText, red, green, blue);
+
+        red.addEventListener("click", () => {
+            console.log("Reddd")
+            let inputTextValue = inputText.value;
+            inputText.style.color = "red"; 
+        })
+
+        green.addEventListener("click", () => {
+            console.log("green")
+            let inputTextValue = inputText.value;
+            inputText.style.color = "green"; 
+        })
+
+        blue.addEventListener("click", () => {
+            console.log("blue")
+            let inputTextValue = inputText.value;
+            inputText.style.color = "blue"; 
+        })
+    </script>
+</body>
+</html>
