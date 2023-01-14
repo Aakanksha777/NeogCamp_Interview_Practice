@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>font size</title>
+</head>
+<body>
+    <label for="Input">Your Input: <input type="text" id="Input"></label>
+   
+
+    <button id="increase">+</button>
+    <button id="decrease">-</button>
+
+
+    <script>
+        const Input = document.querySelector("#Input");
+        const increase = document.querySelector("#increase");
+        const decrease = document.querySelector("#decrease");
+
+        console.log(Input, increase, decrease);
+        
+        let fontSize = 18;
+
+        increase.addEventListener("click", () => {
+           let InputValue = Input.value;
+           console.log("adding")
+           let currentFontSize = Number(fontSize + 2);
+           Input.style.fontSize = `${currentFontSize}px`;
+        })
+
+        
+        decrease.addEventListener("click", () => {
+           let InputValue = Input.value;
+           console.log("subtracting")
+           let currentFontSize = Number(fontSize - 2);
+           Input.style.fontSize = `${currentFontSize}px`;
+        })
+
+    </script>
+</body>
+</html>
