@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H1 H2 H3</title>
+</head>
+<body>
+    <label for="inputText">Input : <input type="text" id="inputText"> </label>
+
+    <button id="h1">H1</button>
+    <button id="h2">H2</button>
+    <button id="h3">H3</button>
+   
+    <script>
+        const inputText = document.querySelector("#inputText");
+        const h1 = document.querySelector("#h1");
+        const h2 = document.querySelector("#h2");
+        const h3 = document.querySelector("#h3");
+
+        console.log(inputText, h1, h2, h3);
+
+        h1.addEventListener("click", () => {
+            console.log("h1 tag");
+            let inputTextValue = inputText.value;
+            console.log(inputTextValue);
+            inputText.style.fontSize = "32px"
+        })
+
+        h2.addEventListener("click", () => {
+            console.log("h2 tag");
+            let inputTextValue = inputText.value;
+            console.log(inputTextValue);
+            inputText.style.fontSize = "28px"
+        })
+
+        h3.addEventListener("click", () => {
+            console.log("h3 tag");
+            let inputTextValue = inputText.value;
+            console.log(inputTextValue);
+            inputText.style.fontSize = "22px"
+        })
+    </script>
+</body>
+</html>
