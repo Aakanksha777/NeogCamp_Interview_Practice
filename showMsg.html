@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="enterName">Enter Your Name : <input type="text" id="enterName"></label>
+    <button id="msg">Get Message</button>
+    <h1 id="outbox"></h1>
+
+    <script>
+        const enterName = document.querySelector("#enterName");
+        const outbox = document.querySelector("#outbox");
+        const msg = document.querySelector("#msg");
+
+        function showMsg () {
+            let enterNameValue = enterName.value;
+           if (enterNameValue === "tanvi"){
+            outbox.innerHTML = "She is the best CEO ever..!";
+            console.log("1st mentor", enterNameValue)
+           } 
+           
+           else if (enterNameValue === "tanay") {
+            outbox.innerHTML = "He is Our Funnt mentor..!";
+            console.log("2nd mentor", enterNameValue)
+           }
+
+           else if (enterNameValue === "swapnil") {
+            outbox.innerHTML = "he is helpful person..!";
+            console.log("3rd mentor", enterNameValue)
+           }
+
+           else if (enterNameValue === "akanksha") {
+            outbox.innerHTML = "great front end expert..!";
+            console.log("4th mentor", enterNameValue)
+           }
+           else {
+            console.log("Re-check spelling")
+           }
+        }
+
+        msg.addEventListener("click", showMsg)
+    </script>
+</body>
+</html>
