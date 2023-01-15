@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="number">Enter Number : <input type="number" id="number"></label>
+    <button id="btn">check</button>
+    <h1 id="Success-msg" style="display: none; columns: green;">Yes,it's automorphic number</h1>
+    <h1 id="Error-msg" style="display: none; columns: red;">Re-try</h1>
+    
+    <script>
+        const number = document.querySelector("#number");
+        const btn = document.querySelector("#btn");
+        const SuccessMsg = document.querySelector("#Success-msg");
+        const ErrorMsg = document.querySelector("#Error-msg");
+
+        btn.addEventListener("click", () => {
+            let inputValue = Number(number.value);
+            let square = inputValue * inputValue;
+            console.log("square ", square)
+            let endNum = square % 10;
+           console.log("end number",endNum);
+
+           if(inputValue === endNum) {
+            console.log("Yes,it's automorphic number")
+            SuccessMsg.style.display = "block"
+           } else {
+            console.log("try again")
+            ErrorMsg.style.display = "block"
+
+           }
+        })
+    </script>
+</body>
+</html>
