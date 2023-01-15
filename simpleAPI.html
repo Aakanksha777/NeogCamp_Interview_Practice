@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api Calling</title>
+    <style>
+        p {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">Fetching API </button>
+    <button id="filterBtn">Filter Price </button>
+    <div id="output"></div>
+
+    <script>
+        const btn = document.querySelector("#btn");
+        const filterBtn = document.querySelector("#filterBtn");
+        const output = document.querySelector("#output");
+
+        let url = 'https://nftbaazarapi.rawheatg.repl.co/product'
+
+        btn.addEventListener("click", () => {
+            console.log("fetch Button");
+            fetch(url)
+            .then(response => response.json())
+            .then (data => {
+                for(let i=0; i<data.data.length; i++){
+                    let outputItem = document.createElement("p");
+                    outputItem.innerHTML = `${data.data[i].name} and price is ${data.data[i].price}`
+                    document.body.appendChild(outputItem);
+                }
+            })
+            .catch(error => console.log("error is found"));
+        })
+
+        filterBtn.addEventListener("click", () => {
+            fetch(url)
+            .then (res => res.json())
+            .then (data => {
+                for(let i=0; i<data.data.length; i++) {
+                    if (Number(data.data[i].price)> 500) {
+                    let outputItem = document.createElement("OL");
+                    outputItem.innerHTML = `${data.data[i].name} and price is <b>${data.data[i].price}</b>`
+                    document.body.appendChild(outputItem); 
+                } 
+             }
+            })
+            .catch(err => console.log(err))
+
+        })
+    </script>
+</body>
+</html>

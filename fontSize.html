@@ -21,21 +21,21 @@
 
         console.log(Input, increase, decrease);
         
-        let fontSize = 18;
+        let fontSize = 18; //20 22 24
 
-        increase.addEventListener("click", () => {
-           let InputValue = Input.value;
-           console.log("adding")
-           let currentFontSize = Number(fontSize + 2);
-           Input.style.fontSize = `${currentFontSize}px`;
-        })
+        function increasedSize () {
+           console.log("function.")
+           fontSize = fontSize + 2
+           Input.style.fontSize = `${fontSize}px`;
+        }
+
+        increase.addEventListener("click", increasedSize);
 
         
         decrease.addEventListener("click", () => {
-           let InputValue = Input.value;
            console.log("subtracting")
-           let currentFontSize = Number(fontSize - 2);
-           Input.style.fontSize = `${currentFontSize}px`;
+           fontSize = fontSize - 2
+           Input.style.fontSize = `${fontSize}px`;
         })
 
     </script>
