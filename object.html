@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btnComplete">Completed task</button>
+    <button id="btnNotComplete">Not-Completed task</button>
+    <div id="output"></div>
+
+    <script>
+        const btnComplete = document.querySelector("#btnComplete");
+        const btnNotComplete = document.querySelector("#btnNotComplete");
+        const output = document.querySelector("#output");
+
+        console.log(btnComplete, btnNotComplete, output);
+
+        let objectArray = [
+            {
+                task : "interview questions",
+                status : "ok"
+            },
+            {
+                task : "mock tests",
+                status : "pending"
+            },
+            {
+                task : "books",
+                status : "ok"
+            }
+        ]
+
+        btnComplete.addEventListener("click", () => {
+            debugger;
+            console.log("completed tasks");
+            for(let i=0; i < objectArray.length; i++) {
+                    if (objectArray[i].status === "ok") {
+                    let outputItem = document.createElement("OL");
+                    outputItem.innerHTML = `${objectArray[i].task}`
+                    document.body.appendChild(outputItem); 
+                } 
+             }
+        })
+    </script>
+</body>
+</html>
