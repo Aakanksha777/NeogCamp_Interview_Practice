@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>confirmation</title>
+</head>
+<body>
+    <label for="pswd">Password : <input type="text" id="pswd"></label>
+    <label for="cnfrm">Confirm : <input type="text" id="cnfrm"></label>
+
+    <h1 id="matched" style="display: none; color: green;">Password Matched</h1>
+    <h1 id="notMatched" style="display: none; color: reds;">Not Matched</h1>
+
+    <button id="btn">Submit</button>
+
+    <script>
+        const pswd = document.querySelector("#pswd");
+        const cnfrm = document.querySelector("#cnfrm");
+        const matched = document.querySelector("#matched");
+        const notMatched = document.querySelector("#notMatched");
+        const btn = document.querySelector("#btn");
+
+        btn.addEventListener("click", () => {
+            console.log("wiring...")
+            const pswdValue = pswd.value;
+            const cnfrmValue = cnfrm.value;
+
+            console.log(pswdValue);
+            console.log(cnfrmValue);
+
+            if (pswdValue === cnfrmValue) {
+                btn.disabled = false;
+                matched.style.display = "block"
+            } else {
+                btn.disabled = true;
+                notMatched.style.display = "block"
+
+            }
+        })
+    </script>
+    
+</body>
+</html>
