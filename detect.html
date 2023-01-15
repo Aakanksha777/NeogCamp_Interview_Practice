@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>detection</title>
+</head>
+<body>
+    <!-- Create a CLI app which would detect fake news.
+    This app will take news as input and then source.
+    If source is Facebook or whatsapp then it will output user saying,
+    "Don't believe things on FB and Whatsapp". Can you extend this to include telegram as well? -->
+
+    <label for="newsText">News Content : <input type="text" id="newsText"></label>
+    <label for="newsSource">News Source : 
+        <select id="socialMedia">
+            <option id="options" value="Facebook">Facebook</option>
+            <option id="options" value="Whatsapp">Whatsapp</option>
+            <option id="options" value="Telegram">Telegram</option>
+          </select>
+    </label>
+    <button id="btn">Check News</button>
+
+    <script>
+        const newsText = document.querySelector("#newsText");
+        const socialMedia = document.querySelector("#socialMedia");
+        const options = document.querySelector("#options");
+        const btn = document.querySelector("#btn");
+        
+
+        console.log(newsText , socialMedia, btn);
+
+        btn.addEventListener("click", () => {
+            // debugger;
+            console.log("checking NEWS")
+            if (!options.value === "Telegram") {
+                console.log("fake news")
+            } else {
+                console.log("reality check....")
+            }
+
+        })
+    </script>
+    
+</body>
+</html>
