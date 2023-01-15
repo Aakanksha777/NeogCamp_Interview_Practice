@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="costPrice">Cost-Price : <input type="text" id="costPrice"></label>
+    <label for="sellingPrice">selling-Price : <input type="text" id="sellingPrice"></label>
+
+    <h1 id="profit" style="display: none; color: darkgreen;">Profitable share</h1>
+    <h1 id="breakeven" style="display: none; color: goldenrod;">Breakeven point</h1>
+    <h1 id="loss" style="display: none; color: red;">Loss making share</h1>
+
+    <button id="btn">Check</button>
+
+    <script>
+        const costPrice = document.querySelector("#costPrice");
+        const sellingPrice = document.querySelector("#sellingPrice");
+        const profit = document.querySelector("#profit");
+        const breakeven = document.querySelector("#breakeven");
+        const loss = document.querySelector("#loss");
+
+
+
+        const btn = document.querySelector("#btn");
+
+        function checkProfitLoss () {
+            let costPriceValue = costPrice.value;
+            let sellingPriceValue = sellingPrice.value;
+
+            console.log("cost price is : ", costPriceValue);
+            console.log("selling price is : ", sellingPriceValue);
+
+            if (costPriceValue < sellingPriceValue) {
+                console.log("profitable share")
+                profit.style.display = "block"
+            } 
+                else if (costPriceValue == sellingPriceValue){
+                console.log("here is breakeven point")
+                breakeven.style.display = "block"
+
+            } 
+                else if (costPriceValue > sellingPriceValue) {
+                console.log("loss making share")
+                loss.style.display = "block"
+
+            }
+        }
+
+        btn.addEventListener("click", checkProfitLoss)
+    </script>
+</body>
+</html>
