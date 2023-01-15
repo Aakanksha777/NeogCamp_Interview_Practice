@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="nameText">Your name : <input type="text" id="nameText"></label>
+    <button id="otpNum">Get OTP</button>
+    <h1 id="output"></h1>
+
+    <script>
+        const nameText = document.querySelector("#nameText");
+        const otpNum = document.querySelector("#otpNum");
+        const output = document.querySelector("#output");
+
+        
+        function randomOTP () {
+            const url = "https://OTPGenerator.ishanjirety.repl.co/get-otp?name=";
+            let nameTextValue = nameText.value;
+            let namedUrl = url + nameTextValue
+            console.log("getting OTP...")
+            fetch(namedUrl)
+            .then(res => res.json())
+            .then(data => {
+                output.innerHTML = data.otp
+            })
+            .catch (err => console.log("check your code again"))  
+
+        }
+        otpNum.addEventListener("click", randomOTP)
+    </script>
+</body>
+</html>
