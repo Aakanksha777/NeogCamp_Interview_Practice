@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Create 2 buttons with text YJHD and ZNMD. At the click of a button,
+     call the given API with the query as same as the button text, 
+     and display the message you get on the screen. 
+    Followup: Instead of using calling the fetch function twice in both events(clicking of buttons),
+    enclose it in a different function so that it can be used accordingly in both areas. -->
+
+    <button id="YJHD">YJHD</button>
+    <button id="ZNMD">ZNMD</button>
+    <h1 id="output"></h1>
+
+    <script>
+        const YJHD = document.querySelector("#YJHD");
+        const ZNMD = document.querySelector("#ZNMD");
+        const output = document.querySelector("#output");
+
+        YJHD.addEventListener("click", () => {
+            let url = 'https://mock-practice.prakhar10v.repl.co/bollywood?name=';
+            let serverUrl = url + "YJHD";
+
+            fetch(serverUrl)
+            .then (res => res.json())
+            .then (data => 
+            {
+                output.innerHTML = `Famous Quote is : ${data.message}`
+            }
+            )
+            .catch(err => console.log(" YJHD found some ERRORS...!"))
+        })
+
+        ZNMD.addEventListener("click", () => {
+            let url = 'https://mock-practice.prakhar10v.repl.co/bollywood?name=';
+            let serverUrl = url + "ZNMD";
+
+            fetch(serverUrl)
+            .then (res => res.json())
+            .then (data => 
+            {
+                output.innerHTML = `Famous Quote is : ${data.message}`
+            }
+            )
+            .catch(err => console.log(" ZNMD found some ERRORS...!"))
+        })
+    </script>
+</body>
+</html>
