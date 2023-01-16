@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Create two objects with name, age, and yuga as Ram, 25, Treta. Krishna, 31, Dwapar.
+     Write a function which takes two objects and return the person with more age.  -->
+
+    <h1>who's More PowerFul :</h1>
+    <button id="btn">Check</button>
+    <h1 id="outbox"></h1>
+
+    <script>
+      const btn = document.querySelector("#btn");
+      const outbox = document.querySelector("#outbox");
+      let ramaObject = {
+        name: "Ram",
+        age: 5500,
+        yuga: "Treta",
+      };
+
+      let KrishnaObject = {
+        name: "Krishna",
+        age: 2500,
+        yuga: "Dwapar",
+      };
+
+      function powerfulGod(ramaObject, KrishnaObject ) {
+        if (ramaObject.age < KrishnaObject.age) {
+          console.log("krishna is powerful : ", KrishnaObject.age);
+          outbox.innerHTML = "krishna is powerful";
+        } else {
+          console.log("rama is supreme")
+          outbox.innerHTML = "Rama is supreme";
+
+        }
+      }
+      btn.addEventListener("click", () => {
+        powerfulGod(ramaObject, KrishnaObject)
+      });
+
+    </script>
+  </body>
+</html>
